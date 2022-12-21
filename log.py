@@ -5,7 +5,7 @@ MY_MONEY = config('MY_MONEY', cast=int)
 
 
 def lor(user_answer, user_sum, user_slot):
-    if user_answer == 'ye' and 30 > user_slot < 1 and user_sum < MY_MONEY:
+    if user_answer == 'да' and 30 > user_slot < 1 and user_sum < MY_MONEY:
         c = randint(0, 30)
         print(c)
         if c == user_slot:
