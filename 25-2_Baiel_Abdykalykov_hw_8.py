@@ -94,11 +94,11 @@ def select_products_by_limits(conn, price_limit, quantity_limit):
         print(e)
 
 
-def select_products_by_product_title(conn, product_title):
+def select_products_by_product_title(conn, select):
     try:
-        sql = '''SELECT * FROM products WHERE product_title REGEXP [?]*'''
+        sql = '''SELECT * FROM products WHERE product_title = ?'''
         cursor = conn.cursor()
-        cursor.execute(sql, (product_title,))
+        cursor.execute(sql, (select,))
         rows = cursor.fetchall()
         for row in rows:
             print(row)
@@ -129,6 +129,6 @@ if connection is not None:
     # delete_products(connection, 6)
     # select_products_by_limits(connection, 100, 50)
     # select_all_products(connection)
-    select_products_by_product_title(connection, 'мыло')
+    select_products_by_product_title(connection, ('Рис'))
     print('Done')
     connection.close()
