@@ -129,6 +129,6 @@ if connection is not None:
     # delete_products(connection, 6)
     # select_products_by_limits(connection, 100, 50)
     # select_all_products(connection)
-    select_products_by_product_title(connection, ('Рис'))
+    select_products_by_product_title(connection, ('Соль'))
     print('Done')
     connection.close()
